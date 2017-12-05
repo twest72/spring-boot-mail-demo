@@ -26,9 +26,10 @@ repositories {
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-actuator'
     compile 'org.springframework.boot:spring-boot-actuator-docs'
-    compile 'org.springframework.boot:spring-boot-starter-mail'
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-starter-integration'
+    compile 'org.springframework.boot:spring-boot-starter-mail'
+    compile 'org.springframework.boot:spring-boot-starter-jpa'
 
     compile 'org.springframework.integration:spring-integration-mail'
     compile 'org.codehaus.groovy:groovy-all'
