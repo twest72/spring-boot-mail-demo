@@ -12,5 +12,4 @@ class MailDemoApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
