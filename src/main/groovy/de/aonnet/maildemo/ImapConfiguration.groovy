@@ -18,12 +18,13 @@ class ImapConfiguration {
 
     @Bean
     ImapMailReceiver mailReceiver() {
-        String userName = 'thomas.westphal@aonnet.de'
-        String password = '***************'
+        String userName = 'jenkins@aonnet.de'
+        String password = '******************'
 
         String userNameEncoded = encode(userName, 'UTF-8')
+        String passwordEncoded = encode(password, 'UTF-8')
         ImapMailReceiver mailReceiver = new ImapMailReceiver(
-                "imaps://${userNameEncoded}:${password}@imap.1und1.de:993/INBOX")
+                "imaps://${userNameEncoded}:${passwordEncoded}@imap.1und1.de:993/INBOX")
 
         mailReceiver.javaMailProperties = javaMailProperties()
         mailReceiver.shouldDeleteMessages = false

@@ -12,6 +12,8 @@ import javax.mail.internet.MimeMessage
 @CompileStatic
 class MailListener {
 
+    private MailParser mailParser = new MailParser()
+
     @ServiceActivator
     void processMail(MimeMessage mail) {
         String contentType = mail.getContentType()
@@ -23,5 +25,12 @@ class MailListener {
         String content = mail.inputStream.getText('UTF-8')
         log.info "Mail $date from $from to $to subject: '$subject' (content type: $contentType)"
         log.info "Mail message: '$content'"
+
+        parseContent(content)
+    }
+
+    private void parseContent(String content) {
+        BuildInfo buildInfo = mailParser.buildInfoOf content
+        log.info "Mail build info: '$buildInfo'"
     }
 }
